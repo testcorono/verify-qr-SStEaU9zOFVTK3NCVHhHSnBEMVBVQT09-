@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TestCorona | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="css/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/qrcode-reader.min.css">
+    <link href="css/bootstrap-editable.css" rel="stylesheet">
+
+
+</head>
+
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#"><b>Test</b>Corona</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Certificate Details : </p>
+            <div class="row">
+                <div class="col">
+                                            <b>Name</b> : ATAEVA PATIMAT <br>
+                        <b>Date of birth</b> : 1997-11-20 <br>
+                        <b>Mobile</b> : +966547542534 <br>
+                        <b>Nationality</b> : Russia <br>
+                        <b>Identification Type</b> : Passport <br>
+                        <b>Identification ID</b> : 755780985 <br>
+                        <b>Gender</b> :  Family  <br> <hr>
+                        <b>Result Time</b> : 2021-06-26 16:06:21 <br>
+                        <b>Hours since result</b> : 9.3 Hours <br>
+                                                <b>Result</b> : Negative <br><br><br>
+                                            
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;">
+                    <div class="alert alert-danger" role="alert" style=" display: none; "></div>
+                </div>
+            </div>
+            <a class="btn btn-danger btn-block" id="scan-qr" href="#">QR Scanner</a>
+
+            <!-- /.social-auth-links -->
+
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/adminlte.min.js"></script>
+
+<script src="js/qrcode-reader.min.js"></script>
+<script>
+    $.qrCodeReader.jsQRpath = "/packages/qrcode-reader-master/dist/js/jsQR/jsQR.min.js";
+    $.qrCodeReader.beepPath = "/packages/qrcode-reader-master/dist/audio/beep.mp3";
+    $("#scan-qr").qrCodeReader({
+        target: "#target-input",
+        audioFeedback: true,
+        multiple: false,
+        callback: function(code) {
+            if(code != "" && code != undefined){
+                window.location.href=code;
+            }
+        }
+    });
+</script>
+
+
+</body></html>
